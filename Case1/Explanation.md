@@ -1,62 +1,22 @@
-CI detected that the dependency upgrade from version **spring-web-5.3.24** to **spring-web-6.0.7** has failed. 
+CI detected that the dependency upgrade from version **spring-core-5.3.23** to **spring-core-6.0.3** has failed. 
 The new version of the dependency require a different version of Java. 
 
-CI uses **Java 11** (class version **55.0**). The new version of the dependency requires **Java 18** (class version **62.0**). 
+CI uses **Java 11** (class version **55.0**). The new version of the dependency requires **Java 17** (class version **61.0**). 
 
-To resolve this issue, you need to update the Java version to **Java 18** in the following files: 
-- `development-maven-build.yml`
-- `maven-build-push.yml`
-- `maven-build.yml`
+To resolve this issue, you need to update the Java version to **Java 17** in the following files: 
+- `test-suite.yml`
+- `build.yml`
+- `findbugs.yml`
 
 <details>
 <summary>Here you can find a list of failures identified from the logs generated in the build process</summary>
 
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[50,32] cannot access org.springframework.http.HttpStatus<br>[ERROR]   bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/http/HttpStatus.class)<br>[ERROR]     class file has wrong version 62.0, should be 55.0<br>[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath. 
+*    > [ERROR] /LPVS/src/main/java/com/lpvs/controller/GitHubWebhooksController.java:[25,32] cannot access org.springframework.util.StringUtils<br>[ERROR]   bad class file: /root/.m2/repository/org/springframework/spring-core/6.0.3/spring-core-6.0.3.jar(/org/springframework/util/StringUtils.class)<br>[ERROR]     class file has wrong version 61.0, should be 55.0<br>[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath. 
 
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[95,52] cannot find symbol<br>[ERROR]   symbol:   class MediaType<br>[ERROR]   location: class ids.messaging.response.Base64EncodedFileBodyResponse<T> 
+*    > [ERROR] /LPVS/src/main/java/com/lpvs/LicensePreValidationSystem.java:[39,12] cannot find symbol<br>[ERROR]   symbol:   class TaskExecutor<br>[ERROR]   location: class com.lpvs.LicensePreValidationSystem 
 
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[88,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.endpoint.MessageController 
+*    > [ERROR] /LPVS/src/main/java/com/lpvs/util/FileUtil.java:[13,32] cannot access org.springframework.util.FileSystemUtils<br>  bad class file: /root/.m2/repository/org/springframework/spring-core/6.0.3/spring-core-6.0.3.jar(/org/springframework/util/FileSystemUtils.class)<br>    class file has wrong version 61.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
 
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[54,38] cannot find symbol<br>  symbol:   class HttpEntity<br>  location: class ids.messaging.response.Base64EncodedFileBodyResponse<T> 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[120,12] cannot find symbol<br>[ERROR]   symbol:   class ResponseEntity<br>[ERROR]   location: class ids.messaging.endpoint.MessageController 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/http/IdsHttpService.java:[96,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.protocol.http.IdsHttpService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/dispatcher/MessageDispatcher.java:[59,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.dispatcher.MessageDispatcher 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/EndpointService.java:[28,47] cannot access org.springframework.web.bind.annotation.RequestMethod<br>[ERROR]   bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/web/bind/annotation/RequestMethod.class)<br>[ERROR]     class file has wrong version 62.0, should be 55.0<br>[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/http/IdsHttpService.java:[108,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.protocol.http.IdsHttpService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[52,32] cannot access org.springframework.http.ResponseEntity<br>  bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/http/ResponseEntity.class)<br>    class file has wrong version 62.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/handler/request/RequestMessageHandlerService.java:[51,6] cannot find symbol<br>  symbol:   class Autowired<br>  location: class ids.messaging.handler.request.RequestMessageHandlerService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[36,32] cannot access org.springframework.http.HttpHeaders<br>[ERROR]   bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/http/HttpHeaders.class)<br>[ERROR]     class file has wrong version 62.0, should be 55.0<br>[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/MessageService.java:[38,52] cannot access org.springframework.beans.factory.annotation.Autowired<br>  bad class file: /root/.m2/repository/org/springframework/spring-beans/6.0.7/spring-beans-6.0.7.jar(/org/springframework/beans/factory/annotation/Autowired.class)<br>    class file has wrong version 62.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[103,6] cannot find symbol<br>[ERROR]   symbol:   class Autowired<br>[ERROR]   location: class ids.messaging.endpoint.MessageController 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/MessageService.java:[75,6] cannot find symbol<br>  symbol:   class Autowired<br>  location: class ids.messaging.protocol.MessageService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/EndpointService.java:[26,32] cannot access org.springframework.http.MediaType<br>[ERROR]   bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/http/MediaType.class)<br>[ERROR]     class file has wrong version 62.0, should be 55.0<br>[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/http/IdsHttpService.java:[57,52] cannot access org.springframework.beans.factory.annotation.Value<br>  bad class file: /root/.m2/repository/org/springframework/spring-beans/6.0.7/spring-beans-6.0.7.jar(/org/springframework/beans/factory/annotation/Value.class)<br>    class file has wrong version 62.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[35,32] cannot access org.springframework.http.HttpEntity<br>  bad class file: /root/.m2/repository/org/springframework/spring-web/6.0.7/spring-web-6.0.7.jar(/org/springframework/http/HttpEntity.class)<br>    class file has wrong version 62.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[82,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.endpoint.MessageController 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/protocol/http/IdsHttpService.java:[102,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.protocol.http.IdsHttpService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/MessageController.java:[94,6] cannot find symbol<br>[ERROR]   symbol:   class Value<br>[ERROR]   location: class ids.messaging.endpoint.MessageController 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[66,81] cannot find symbol<br>  symbol:   class MediaType<br>  location: class ids.messaging.response.Base64EncodedFileBodyResponse<T> 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/endpoint/EndpointService.java:[55,6] cannot find symbol<br>[ERROR]   symbol:   class Autowired<br>[ERROR]   location: class ids.messaging.endpoint.EndpointService 
-
-*    > [ERROR] /IDS-Messaging-Services/messaging/src/main/java/ids/messaging/response/Base64EncodedFileBodyResponse.java:[54,19] cannot find symbol<br>[ERROR]   symbol:   class HttpEntity<br>[ERROR]   location: class ids.messaging.response.Base64EncodedFileBodyResponse<T>
+*    > [ERROR] /LPVS/src/main/java/com/lpvs/LicensePreValidationSystem.java:[17,37] cannot access org.springframework.core.task.TaskExecutor<br>  bad class file: /root/.m2/repository/org/springframework/spring-core/6.0.3/spring-core-6.0.3.jar(/org/springframework/core/task/TaskExecutor.class)<br>    class file has wrong version 61.0, should be 55.0<br>    Please remove or make sure it appears in the correct subdirectory of the classpath. 
 
 </details>
